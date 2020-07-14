@@ -362,11 +362,8 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
 
-    h1, h2 {
-        margin: 0;
-    }
-
     h1 {
+        margin: 0;
         color: #fff;
         font-weight: 900;
         font-size: 5em;
@@ -376,11 +373,33 @@ footer {
     }
 
     h2 {
-        color: lighten($base-color, 25%);
+        margin: auto;
+        border-right: solid 3px rgba(0,255,0,.75);
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: 'Source Code Pro', monospace;
         font-weight: 500;
         font-size: 2.25em;
         margin-bottom: 15px;
+        color: lighten($base-color, 25%);
     }
+
+
+    h2 {
+        animation: animated-text 4s steps(29) 1s 1 normal both,
+                   animated-cursor 600ms steps(29) 2.6s 1 normal both;
+       }
+
+       @keyframes animated-text{
+         from{width: 0;}
+         to{width: 100%}
+       }
+
+       @keyframes animated-cursor{
+         from{border-right-color: rgba(0,255,0,.75);}
+         to{border-right-color: transparent;}
+       }
+
 }
 
 #lead-overlay {
